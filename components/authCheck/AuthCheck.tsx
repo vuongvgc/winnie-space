@@ -1,17 +1,17 @@
-"use client";
+'use client'
 
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
-import React, { ReactNode } from "react";
+import { useSession } from 'next-auth/react'
+import React, { ReactNode } from 'react'
+
 interface AuthCheckProps {
-  children: ReactNode;
+  children: ReactNode
 }
 export default function AuthCheck({ children }: AuthCheckProps) {
-  const { data: session, status } = useSession();
-  console.log("auth", session, status);
-  if (status === "authenticated") {
-    return <>{children}</>;
+  const { data: session, status } = useSession()
+  console.log('auth', session, status)
+  if (status === 'authenticated') {
+    return <>{children}</>
   } else {
-    return <>Not logged in to see this</>;
+    return <>Not logged in to see this</>
   }
 }
