@@ -2,6 +2,7 @@
 import { Button, Modal } from 'antd'
 import React from 'react'
 import { ExclamationCircleOutlined } from '@ant-design/icons'
+import AdminContainer from '../components/adminContainer/AdminContainer'
 
 export default function PostManagement() {
   const [modal, contextHolder] = Modal.useModal()
@@ -16,10 +17,10 @@ export default function PostManagement() {
   }
 
   return (
-    <div>
+    <AdminContainer>
       <h1>Post Management</h1>
       <Button onClick={confirm}>Confirm</Button>
       {contextHolder}
-    </div>
+    </AdminContainer>
   )
 }
